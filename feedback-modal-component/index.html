@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Modal</title>
-    <link rel="stylesheet" href="src/style.css">
-</head>
-<body>
-    <!-- The Modal -->
-    <div id="feedbackModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            
-            <div class="modal-header">
-                <h2>How likely are you to recommend FrontendPro to someone you know?</h2>
-            </div>
-            
-            <div class="rating-container">
-                <div class="rating-scale">
-                    <button class="rating-btn" value="1">1</button>
-                    <button class="rating-btn" value="2">2</button>
-                    <button class="rating-btn" value="3">3</button>
-                    <button class="rating-btn" value="4">4</button>
-                    <button class="rating-btn" value="5">5</button>
-                    <button class="rating-btn" value="6">6</button>
-                    <button class="rating-btn" value="7">7</button>
-                    <button class="rating-btn" value="8">8</button>
-                    <button class="rating-btn" value="9">9</button>
-                    <button class="rating-btn" value="10">10</button>
-                </div>
-                <div class="rating-labels">
-                    <span>Not likely at all</span>
-                    <span>Extremely Likely</span>
-                </div>
-            </div>
-            
-            <div class="modal-footer">
-                <button id="cancelBtn">Cancel</button>
-                <button id="submitBtn">Submit</button>
-            </div>
-        </div>
-    </div>
 
-    <script src="src/script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Modal Component</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <h1>FrontendPro Feedback</h1>
+    <p style="margin: 20px 0;">Thank you for visiting and using our website, could you give us a rating?</p>
+    <button class="btn-primary" id="openModalBtn">Give Rating</button>
+  </div>
+
+  <!-- Modal overlay with feedback form -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <h2 class="modal-title">How likely are you to recommend FrontendPro to someone you know?</h2>
+
+      <!-- Rating scale buttons 1-10 -->
+      <div class="rating-scale" id="ratingScale">
+        <div class="rating-option" data-value="1">1</div>
+        <div class="rating-option" data-value="2">2</div>
+        <div class="rating-option" data-value="3">3</div>
+        <div class="rating-option" data-value="4">4</div>
+        <div class="rating-option" data-value="5">5</div>
+        <div class="rating-option" data-value="6">6</div>
+        <div class="rating-option" data-value="7">7</div>
+        <div class="rating-option" data-value="8">8</div>
+        <div class="rating-option" data-value="9">9</div>
+        <div class="rating-option" data-value="10">10</div>
+      </div>
+
+      <!-- Labels for the rating scale -->
+      <div class="rating-labels">
+        <span>Not likely at all</span>
+        <span>Extremely Likely</span>
+      </div>
+
+      <!-- Modal action buttons -->
+      <div class="modal-actions">
+        <button class="btn-cancel" id="cancelBtn">Cancel</button>
+        <button class="btn-submit" id="submitBtn">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/script.js"></script>
 </body>
+
 </html>

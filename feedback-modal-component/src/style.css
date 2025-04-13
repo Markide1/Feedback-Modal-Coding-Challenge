@@ -1,7 +1,205 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* Foundational colors */
+:root {
+  --primary-color: #6c5ce7;
+  --primary-light: #a29bfe;
+  --dark-bg: #1e1b2e;
+  --light-bg: #e6e1ff;
+  --text-light: #ffffff;
+  --text-dark: #333;
 }
 
-/* write your CSS here */
+/* Basic page and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Primary button style */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+/* Modal overlay - the dark background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* The modal box */
+.modal {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Close button (X) */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--primary-light);
+}
+
+/* Modal title */
+.modal-title {
+  margin-bottom: 30px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Rating scale - buttons from 1-10 */
+.rating-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.rating-option {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover and selected states for rating buttons */
+.rating-option:hover,
+.rating-option.selected {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Labels under rating scale */
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Container for modal action buttons */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Cancel button */
+.btn-cancel {
+  flex: 1;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: none;
+  color: var(--text-light);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Submit button */
+.btn-submit {
+  flex: 1;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-light);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 600px) {
+  .rating-scale {
+    gap: 5px;
+  }
+
+  .rating-option {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
