@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style.css" />
-    <title>Feedback Modal Component - FrontendPro Challenge</title>
-  </head>
-  <body>
-    <!-- Write your HTML here -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Modal</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <!-- The Modal -->
+    <div id="feedbackModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div class="modal-header">
+                <h2>How likely are you to recommend FrontendPro to someone you know?</h2>
+            </div>
+            
+            <div class="rating-container">
+                <div class="rating-scale">
+                    <button class="rating-btn" value="1">1</button>
+                    <button class="rating-btn" value="2">2</button>
+                    <button class="rating-btn" value="3">3</button>
+                    <button class="rating-btn" value="4">4</button>
+                    <button class="rating-btn" value="5">5</button>
+                    <button class="rating-btn" value="6">6</button>
+                    <button class="rating-btn" value="7">7</button>
+                    <button class="rating-btn" value="8">8</button>
+                    <button class="rating-btn" value="9">9</button>
+                    <button class="rating-btn" value="10">10</button>
+                </div>
+                <div class="rating-labels">
+                    <span>Not likely at all</span>
+                    <span>Extremely Likely</span>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button id="cancelBtn">Cancel</button>
+                <button id="submitBtn">Submit</button>
+            </div>
+        </div>
+    </div>
 
-    <script src="/src/script.js"></script>
-  </body>
+    <script src="src/script.js"></script>
+</body>
 </html>
